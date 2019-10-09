@@ -1,0 +1,52 @@
+{
+  "name": "@checkers/server",
+  "version": "1.0.0",
+  "description": "A GitHub App that bridges the gap between CI systems and GitHub Checks",
+  "author": "Jonathan Keslin <github@jonathankeslin.com>",
+  "license": "MIT",
+  "repository": "https://github.com/decompil3d/checkers-server.git",
+  "homepage": "https://github.com/decompil3d/checkers-server",
+  "bugs": "https://github.com/decompil3d/checkers-server/issues",
+  "main": "index.js",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app"
+  ],
+  "scripts": {
+    "dev": "nodemon",
+    "start": "probot run ./index.js",
+    "lint": "standard --fix",
+    "test": "jest && standard",
+    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "js-yaml": "^3.13.1",
+    "probot": "^9.5.1"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3",
+    "nodemon": "^1.19.3",
+    "smee-client": "^1.1.0",
+    "standard": "^10.0.3"
+  },
+  "engines": {
+    "node": ">= 8.3.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "nodemonConfig": {
+    "exec": "npm start",
+    "watch": [
+      ".env",
+      "."
+    ]
+  }
+}
